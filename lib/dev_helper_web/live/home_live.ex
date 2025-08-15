@@ -11,10 +11,10 @@ defmodule DevHelperWeb.HomeLive do
   @impl true
   def render(assigns) do
     ~H"""
-    <Layouts.app flash={@flash} current_scope={@current_scope}>
-      <div class="min-h-screen bg-gradient-to-br from-primary/5 via-base-100 to-secondary/5">
+    <Layouts.app flash={@flash}>
+      <div class="mx-auto space-y-4">
         <!-- Hero Section -->
-        <div class="hero min-h-screen">
+        <div class="hero">
           <div class="hero-content text-center max-w-6xl">
             <div class="grid lg:grid-cols-2 gap-16 items-center">
               <!-- Left Content -->
@@ -29,14 +29,14 @@ defmodule DevHelperWeb.HomeLive do
                     </div>
                     <div class="absolute -top-2 -right-2 w-6 h-6 bg-accent rounded-full flex items-center justify-center">
                       <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M13 3l3.293 3.293-7 7 1.414 1.414 7-7L21 11V3z"/>
-                        <path d="M19 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h6"/>
+                        <path d="M13 3l3.293 3.293-7 7 1.414 1.414 7-7L21 11V3z" />
+                        <path d="M19 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h6" />
                       </svg>
                     </div>
                   </div>
                 </div>
-
-                <!-- Title and Description -->
+                
+    <!-- Title and Description -->
                 <div class="space-y-6">
                   <h1 class="text-6xl lg:text-7xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                     DevHelper
@@ -46,13 +46,12 @@ defmodule DevHelperWeb.HomeLive do
                       개발자를 위한 <span class="font-semibold text-primary">스마트 명령어 저장소</span>
                     </p>
                     <p class="text-lg text-base-content/60">
-                      자주 사용하지만 기억하기 어려운 명령어들을<br/>
-                      체계적으로 정리하고 빠르게 찾아보세요
+                      자주 사용하지만 기억하기 어려운 명령어들을<br /> 체계적으로 정리하고 빠르게 찾아보세요
                     </p>
                   </div>
                 </div>
-
-                <!-- Action Buttons -->
+                
+    <!-- Action Buttons -->
                 <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                   <.link
                     navigate="/commands"
@@ -60,11 +59,17 @@ defmodule DevHelperWeb.HomeLive do
                   >
                     <span class="relative z-10 flex items-center gap-2">
                       <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                        />
                       </svg>
                       명령어 탐색하기
                     </span>
-                    <div class="absolute inset-0 bg-gradient-to-r from-primary-focus to-secondary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="absolute inset-0 bg-gradient-to-r from-primary-focus to-secondary opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    </div>
                   </.link>
 
                   <%= if @current_scope do %>
@@ -74,7 +79,12 @@ defmodule DevHelperWeb.HomeLive do
                     >
                       <span class="flex items-center gap-2">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+                          />
                         </svg>
                         새 명령어 추가
                       </span>
@@ -86,7 +96,12 @@ defmodule DevHelperWeb.HomeLive do
                     >
                       <span class="flex items-center gap-2">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M13 7l5 5m0 0l-5 5m5-5H6"
+                          />
                         </svg>
                         시작하기
                       </span>
@@ -94,8 +109,8 @@ defmodule DevHelperWeb.HomeLive do
                   <% end %>
                 </div>
               </div>
-
-              <!-- Right Visual -->
+              
+    <!-- Right Visual -->
               <div class="hidden lg:block">
                 <div class="relative">
                   <!-- Mock Terminal -->
@@ -115,16 +130,20 @@ defmodule DevHelperWeb.HomeLive do
                       <div class="text-primary">Starting container...</div>
                       <div class="flex items-center">
                         <span class="text-success">$</span>
-                        <span class="ml-2 text-base-content/60">git commit -m "feat: add new feature"</span>
+                        <span class="ml-2 text-base-content/60">
+                          git commit -m "feat: add new feature"
+                        </span>
                       </div>
                       <div class="flex items-center">
                         <span class="text-success">$</span>
-                        <span class="ml-2 text-base-content/60">npm install --save-dev typescript</span>
+                        <span class="ml-2 text-base-content/60">
+                          npm install --save-dev typescript
+                        </span>
                       </div>
                     </div>
                   </div>
                   
-                  <!-- Floating Cards -->
+    <!-- Floating Cards -->
                   <div class="absolute -top-4 -right-4 bg-primary text-primary-content px-4 py-2 rounded-full text-sm font-medium shadow-lg animate-bounce">
                     💡 빠른 검색
                   </div>
@@ -136,15 +155,25 @@ defmodule DevHelperWeb.HomeLive do
             </div>
           </div>
         </div>
-
-        <!-- Features Section -->
+        
+    <!-- Features Section -->
         <div class="container mx-auto px-4 py-16">
           <div class="grid md:grid-cols-3 gap-8">
             <div class="card bg-base-100 shadow-xl border border-base-content/5 hover:shadow-2xl transition-shadow duration-300">
               <div class="card-body text-center">
                 <div class="mx-auto w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-4">
-                  <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                  <svg
+                    class="w-8 h-8 text-primary"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                    />
                   </svg>
                 </div>
                 <h3 class="card-title justify-center text-lg">빠른 검색</h3>
@@ -155,8 +184,18 @@ defmodule DevHelperWeb.HomeLive do
             <div class="card bg-base-100 shadow-xl border border-base-content/5 hover:shadow-2xl transition-shadow duration-300">
               <div class="card-body text-center">
                 <div class="mx-auto w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center mb-4">
-                  <svg class="w-8 h-8 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
+                  <svg
+                    class="w-8 h-8 text-secondary"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"
+                    />
                   </svg>
                 </div>
                 <h3 class="card-title justify-center text-lg">스마트 태그</h3>
@@ -167,8 +206,18 @@ defmodule DevHelperWeb.HomeLive do
             <div class="card bg-base-100 shadow-xl border border-base-content/5 hover:shadow-2xl transition-shadow duration-300">
               <div class="card-body text-center">
                 <div class="mx-auto w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center mb-4">
-                  <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                  <svg
+                    class="w-8 h-8 text-accent"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+                    />
                   </svg>
                 </div>
                 <h3 class="card-title justify-center text-lg">원클릭 복사</h3>
