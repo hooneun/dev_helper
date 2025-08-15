@@ -67,6 +67,7 @@ defmodule DevHelperWeb.CommandLive.Index do
   @impl true
   def handle_info({type, %DevHelper.Commands.Command{}}, socket)
       when type in [:created, :updated, :deleted] do
-    {:noreply, stream(socket, :commands, Commands.list_commands(socket.assigns.current_scope), reset: true)}
+    {:noreply,
+     stream(socket, :commands, Commands.list_commands(socket.assigns.current_scope), reset: true)}
   end
 end

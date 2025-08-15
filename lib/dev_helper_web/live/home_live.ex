@@ -1,8 +1,6 @@
 defmodule DevHelperWeb.HomeLive do
   use DevHelperWeb, :live_view
 
-  alias DevHelper.Accounts
-
   @impl true
   def mount(_params, _session, socket) do
     {:ok, socket}

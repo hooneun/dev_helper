@@ -64,7 +64,13 @@ defmodule DevHelperWeb.CommandLive.Form do
 
   @impl true
   def handle_event("validate", %{"command" => command_params}, socket) do
-    changeset = Commands.change_command(socket.assigns.current_scope, socket.assigns.command, command_params)
+    changeset =
+      Commands.change_command(
+        socket.assigns.current_scope,
+        socket.assigns.command,
+        command_params
+      )
+
     {:noreply, assign(socket, form: to_form(changeset, action: :validate))}
   end
 
@@ -73,7 +79,11 @@ defmodule DevHelperWeb.CommandLive.Form do
   end
 
   defp save_command(socket, :edit, command_params) do
-    case Commands.update_command(socket.assigns.current_scope, socket.assigns.command, command_params) do
+    case Commands.update_command(
+           socket.assigns.current_scope,
+           socket.assigns.command,
+           command_params
+         ) do
       {:ok, command} ->
         {:noreply,
          socket

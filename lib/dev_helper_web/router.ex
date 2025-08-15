@@ -55,6 +55,10 @@ defmodule DevHelperWeb.Router do
       on_mount: [{DevHelperWeb.UserAuth, :require_authenticated}] do
       live "/users/settings", UserLive.Settings, :edit
       live "/users/settings/confirm-email/:token", UserLive.Settings, :confirm_email
+      live "/commands", CommandLive.Index
+      live "/commands/new", CommandLive.Form, :new
+      live "/commands/:id", CommandLive.Show
+      live "/commands/:id/edit", CommandLive.Form, :edit
     end
 
     post "/users/update-password", UserSessionController, :update_password
