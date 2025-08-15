@@ -7,7 +7,8 @@ defmodule DevHelper.Commands.Command do
     field :content, :string
     field :description, :string
     field :tags, {:array, :string}
-    field :user_id, :id
+
+    belongs_to :user, DevHelper.Accounts.User
 
     timestamps(type: :utc_datetime)
   end
