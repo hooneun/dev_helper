@@ -12,33 +12,169 @@ defmodule DevHelperWeb.HomeLive do
   def render(assigns) do
     ~H"""
     <Layouts.app flash={@flash} current_scope={@current_scope}>
-      <div class="px-4 py-10 sm:px-6 sm:py-28 lg:px-8 xl:px-28 xl:py-32">
-        <div class="mx-auto max-w-xl lg:mx-0">
-          <svg viewBox="0 0 71 48" class="h-12" aria-hidden="true">
-            <path
-              d="m26.371 33.477-.552-.1c-3.92-.729-6.397-3.1-7.57-6.829-.733-2.324.597-4.035 3.035-4.148 1.995-.092 3.362 1.055 4.57 2.39 1.557 1.721 2.984 3.558 4.514 5.305 2.202 2.515 4.797 4.134 8.347 3.634 3.183-.448 5.958-1.725 8.371-3.828.363-.316.761-.592 1.144-.848l-.241-.485c-2.27.465-4.296.735-6.065-.02-.539-.23-1.398-.989-1.398-1.989 0-.572.514-1.377 1.232-1.811.363-.218.799-.406 1.225-.599 1.118-.506 2.23-1.021 3.334-1.555 6.505-3.152 11.623-7.19 15.393-12.97C66.104 1.49 67.734.012 69.648 0l.055.277c-.73 2.104-1.452 4.218-2.283 6.268-.705 1.74-1.492 3.443-2.293 5.126-.716 1.5-1.45 2.99-2.224 4.457-.706 1.335-1.445 2.659-2.17 4.002-.797 1.474-1.58 2.96-2.335 4.464-.755 1.505-1.479 3.027-2.184 4.567l.624.248c1.498-.635 2.945-1.36 4.428-2.05 1.498-.699 3.01-1.374 4.52-2.045 1.502-.667 3.008-1.327 4.517-1.977.556-.24 1.134-.438 1.72-.609.699-.204 1.421-.358 2.145-.479l.056.277c-2.855 2.303-6.04 4.018-9.418 5.322-3.412 1.317-6.909 2.31-10.448 3.13-3.54.82-7.118 1.458-10.715 1.913l-.313-.349c.688-.832 1.375-1.665 2.062-2.497.688-.832 1.375-1.665 2.062-2.498.688-.832 1.375-1.665 2.062-2.497.688-.832 1.375-1.665 2.062-2.498.688-.832 1.375-1.665 2.062-2.497.688-.832 1.375-1.665 2.062-2.498l-.279-.311c-1.666.775-3.298 1.639-4.936 2.486-1.638.847-3.276 1.693-4.917 2.526-1.64.833-3.281 1.664-4.926 2.482-1.645.817-3.292 1.623-4.943 2.415l-.336-.295c.872-1.133 1.744-2.266 2.616-3.4.872-1.133 1.744-2.266 2.616-3.4.872-1.133 1.744-2.266 2.616-3.4.872-1.133 1.744-2.266 2.616-3.4.872-1.133 1.744-2.266 2.616-3.4.872-1.133 1.744-2.266 2.616-3.4l-.336-.295c-1.651.793-3.268 1.677-4.89 2.547-1.622.87-3.245 1.738-4.871 2.596-1.626.858-3.253 1.706-4.883 2.543-1.63.836-3.261 1.664-4.896 2.479l-.336-.295c.872-1.133 1.744-2.266 2.616-3.4.872-1.133 1.744-2.266 2.616-3.4.872-1.133 1.744-2.266 2.616-3.4.872-1.133 1.744-2.266 2.616-3.4.872-1.133 1.744-2.266 2.616-3.4.872-1.133 1.744-2.266 2.616-3.4l-.336-.295c-1.651.793-3.268 1.677-4.89 2.547-1.622.87-3.245 1.738-4.871 2.596-1.626.858-3.253 1.706-4.883 2.543-1.63.836-3.261 1.664-4.896 2.479l-.336-.295c.872-1.133 1.744-2.266 2.616-3.4.872-1.133 1.744-2.266 2.616-3.4.872-1.133 1.744-2.266 2.616-3.4.872-1.133 1.744-2.266 2.616-3.4.872-1.133 1.744-2.266 2.616-3.4.872-1.133 1.744-2.266 2.616-3.4"
-              fill="#FD4F00"
-            />
-          </svg>
-          <h1 class="text-4xl font-bold tracking-tight text-zinc-900 sm:text-6xl">
-            Phoenix Framework
-          </h1>
-          <p class="mt-6 text-lg leading-8 text-zinc-600">
-            Peace of mind from <strong>prototype to production</strong>
-          </p>
-          <div class="mt-10 flex items-center justify-center gap-x-6">
-            <.link
-              href="https://hexdocs.pm/phoenix/overview.html"
-              class="rounded-lg bg-zinc-900 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-zinc-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-900"
-            >
-              Get started
-            </.link>
-            <.link
-              href="https://github.com/phoenixframework/phoenix"
-              class="text-sm font-semibold leading-6 text-zinc-900"
-            >
-              View on GitHub <span aria-hidden="true">→</span>
-            </.link>
+      <div class="min-h-screen bg-gradient-to-br from-primary/5 via-base-100 to-secondary/5">
+        <!-- Hero Section -->
+        <div class="hero min-h-screen">
+          <div class="hero-content text-center max-w-6xl">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+              <!-- Left Content -->
+              <div class="space-y-8">
+                <!-- Icon with Animation -->
+                <div class="flex justify-center lg:justify-start">
+                  <div class="relative">
+                    <div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center shadow-xl animate-pulse">
+                      <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0L19.2 12l-4.6-4.6L16 6l6 6-6 6-1.4-1.4z" />
+                      </svg>
+                    </div>
+                    <div class="absolute -top-2 -right-2 w-6 h-6 bg-accent rounded-full flex items-center justify-center">
+                      <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M13 3l3.293 3.293-7 7 1.414 1.414 7-7L21 11V3z"/>
+                        <path d="M19 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h6"/>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Title and Description -->
+                <div class="space-y-6">
+                  <h1 class="text-6xl lg:text-7xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                    DevHelper
+                  </h1>
+                  <div class="space-y-4">
+                    <p class="text-xl lg:text-2xl text-base-content/80 leading-relaxed">
+                      개발자를 위한 <span class="font-semibold text-primary">스마트 명령어 저장소</span>
+                    </p>
+                    <p class="text-lg text-base-content/60">
+                      자주 사용하지만 기억하기 어려운 명령어들을<br/>
+                      체계적으로 정리하고 빠르게 찾아보세요
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                  <.link
+                    navigate="/commands"
+                    class="btn btn-primary btn-lg group relative overflow-hidden"
+                  >
+                    <span class="relative z-10 flex items-center gap-2">
+                      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                      </svg>
+                      명령어 탐색하기
+                    </span>
+                    <div class="absolute inset-0 bg-gradient-to-r from-primary-focus to-secondary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </.link>
+
+                  <%= if @current_scope do %>
+                    <.link
+                      navigate="/commands/new"
+                      class="btn btn-outline btn-lg group"
+                    >
+                      <span class="flex items-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                        </svg>
+                        새 명령어 추가
+                      </span>
+                    </.link>
+                  <% else %>
+                    <.link
+                      navigate="/users/register"
+                      class="btn btn-outline btn-lg group"
+                    >
+                      <span class="flex items-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                        </svg>
+                        시작하기
+                      </span>
+                    </.link>
+                  <% end %>
+                </div>
+              </div>
+
+              <!-- Right Visual -->
+              <div class="hidden lg:block">
+                <div class="relative">
+                  <!-- Mock Terminal -->
+                  <div class="bg-base-300 rounded-2xl shadow-2xl p-6 border border-base-content/10">
+                    <div class="flex items-center gap-2 mb-4 pb-4 border-b border-base-content/10">
+                      <div class="w-3 h-3 rounded-full bg-error"></div>
+                      <div class="w-3 h-3 rounded-full bg-warning"></div>
+                      <div class="w-3 h-3 rounded-full bg-success"></div>
+                      <span class="ml-2 text-sm text-base-content/60 font-mono">terminal</span>
+                    </div>
+                    <div class="space-y-3 font-mono text-sm">
+                      <div class="flex items-center">
+                        <span class="text-success">$</span>
+                        <span class="ml-2 text-base-content/80">docker run -d --name app</span>
+                        <span class="ml-2 animate-pulse">|</span>
+                      </div>
+                      <div class="text-primary">Starting container...</div>
+                      <div class="flex items-center">
+                        <span class="text-success">$</span>
+                        <span class="ml-2 text-base-content/60">git commit -m "feat: add new feature"</span>
+                      </div>
+                      <div class="flex items-center">
+                        <span class="text-success">$</span>
+                        <span class="ml-2 text-base-content/60">npm install --save-dev typescript</span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <!-- Floating Cards -->
+                  <div class="absolute -top-4 -right-4 bg-primary text-primary-content px-4 py-2 rounded-full text-sm font-medium shadow-lg animate-bounce">
+                    💡 빠른 검색
+                  </div>
+                  <div class="absolute -bottom-4 -left-4 bg-secondary text-secondary-content px-4 py-2 rounded-full text-sm font-medium shadow-lg animate-pulse">
+                    🚀 효율성 UP
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Features Section -->
+        <div class="container mx-auto px-4 py-16">
+          <div class="grid md:grid-cols-3 gap-8">
+            <div class="card bg-base-100 shadow-xl border border-base-content/5 hover:shadow-2xl transition-shadow duration-300">
+              <div class="card-body text-center">
+                <div class="mx-auto w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-4">
+                  <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                  </svg>
+                </div>
+                <h3 class="card-title justify-center text-lg">빠른 검색</h3>
+                <p class="text-base-content/70">키워드나 태그로 필요한 명령어를 즉시 찾아보세요</p>
+              </div>
+            </div>
+
+            <div class="card bg-base-100 shadow-xl border border-base-content/5 hover:shadow-2xl transition-shadow duration-300">
+              <div class="card-body text-center">
+                <div class="mx-auto w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center mb-4">
+                  <svg class="w-8 h-8 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
+                  </svg>
+                </div>
+                <h3 class="card-title justify-center text-lg">스마트 태그</h3>
+                <p class="text-base-content/70">태그 시스템으로 명령어를 체계적으로 분류하고 관리하세요</p>
+              </div>
+            </div>
+
+            <div class="card bg-base-100 shadow-xl border border-base-content/5 hover:shadow-2xl transition-shadow duration-300">
+              <div class="card-body text-center">
+                <div class="mx-auto w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center mb-4">
+                  <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <h3 class="card-title justify-center text-lg">원클릭 복사</h3>
+                <p class="text-base-content/70">클릭 한 번으로 명령어를 클립보드에 복사하세요</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
